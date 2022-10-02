@@ -20,25 +20,25 @@ public class ProjectConfig {
     value to the context.
     * */
     @Bean
-    Vehicle vehicle() {
+    Vehicle vehicle1() {
         var veh = new Vehicle();
         veh.setName("Audi 8");
         return veh;
     }
 
-    /*
-    The method names usually follow verbs notation.But for methods
-    which we will use to create beans, can use nouns as names.
-    This will be a good practise as the method names will become
-    bean names as well in the context.
-    * */
     @Bean
-    String hello() {
-        return "Hello World";
+    Vehicle vehicle2() {
+        var veh = new Vehicle();
+        veh.setName("Honda");
+        return veh;
     }
 
     @Bean
-    Integer number() {
-        return 16;
+    Vehicle vehicle3() {
+        var veh = new Vehicle();
+        veh.setName("Ferrari");
+        return veh;
     }
+
+
 }
