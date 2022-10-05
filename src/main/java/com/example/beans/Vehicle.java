@@ -1,7 +1,5 @@
 package com.example.beans;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -17,9 +15,4 @@ public class Vehicle {
         this.name = name;
     }
 
-    public void printHello(){
-        System.out.println(
-                "Printing Hello from Component Vehicle Bean"
-        );
-    }
 }
