@@ -1,12 +1,18 @@
 package com.example.beans;
 
-public class Person {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-    public Person(){
+@Component
+public class Person {
+    @Autowired
+    public Person(Vehicle vehicle){
         System.out.println("Person bean created by spring");
+        this.vehicle = vehicle;
     }
 
-    private String name;
+    private String name = "Lucy";
+
     private Vehicle vehicle;
 
     public String getName(){

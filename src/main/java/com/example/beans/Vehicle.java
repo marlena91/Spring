@@ -9,7 +9,7 @@ public class Vehicle {
         System.out.println("Vehicle bean created by Spring");
     }
 
-    private String name;
+    private String name = "Toyota";
 
     public String getName() {
         return name;
