@@ -1,19 +1,20 @@
 package com.example.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Person {
-    @Autowired
-    public Person(Vehicle vehicle){
-        System.out.println("Person bean created by spring");
-        this.vehicle = vehicle;
-    }
 
     private String name = "Lucy";
 
-    private Vehicle vehicle;
+    private final Vehicle vehicle;
+    @Autowired
+    public Person(@Qualifier("vehicle1") Vehicle vehicle){
+        System.out.println("Person bean created by spring");
+        this.vehicle = vehicle;
+    }
 
     public String getName(){
         return name;
@@ -27,8 +28,6 @@ public class Person {
         return vehicle;
     }
 
-    public void setVehicle(Vehicle vehicle){
-        this.vehicle = vehicle;
-    }
+
 
 }
