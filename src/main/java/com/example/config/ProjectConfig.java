@@ -8,28 +8,8 @@ import org.springframework.context.annotation.Primary;
 
 
 @Configuration
-@ComponentScan(basePackages = "com.example.beans")
+@ComponentScan(basePackages = {"com.example.implementation", "com.example.services"})
+@ComponentScan(basePackageClasses = {com.example.beans.Vehicle.class, com.example.beans.Person.class})
 public class ProjectConfig {
 
-    @Bean
-    Vehicle vehicle1(){
-        var veh = new Vehicle();
-        veh.setName("Audi");
-        return veh;
-    }
-
-    @Bean
-    @Primary
-    Vehicle vehicle2(){
-        var veh = new Vehicle();
-        veh.setName("Honda");
-        return veh;
-    }
-
-    @Bean
-    Vehicle vehicle3(){
-        var veh = new Vehicle();
-        veh.setName("Toyota");
-        return veh;
-    }
 }
