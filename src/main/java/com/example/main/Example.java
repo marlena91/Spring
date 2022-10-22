@@ -14,15 +14,9 @@ public class Example {
 
         var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
 
-        VehicleServices vehicleServices1 = context.getBean(VehicleServices.class);
-        VehicleServices vehicleServices2 = context.getBean(VehicleServices.class);
-
-        System.out.println("Hashcode of the object vehicleService1: " + vehicleServices1.hashCode());
-        System.out.println("Hashcode of the object vehicleService2: " + vehicleServices2.hashCode());
-
-        if(vehicleServices1==vehicleServices2){
-            System.out.println("VehicleServices bean is singleton scoped bean");
-        }
+        System.out.println("Before retrieving the Person bean from the Spring Context");
+        Person person = context.getBean(Person.class);
+        System.out.println("After retrieving the Person bean from the Spring Context");
 
     }
 }
