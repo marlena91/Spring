@@ -12,4 +12,9 @@ public class MichelinTyres implements Tyres {
             return "Vehicle moving with Michelin tyres";
         }
 
+    @Override
+    public String stop() {
+        return "Vehicle stop with Michelin tyres";
+    }
+
 }
