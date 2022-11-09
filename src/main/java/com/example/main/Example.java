@@ -18,7 +18,7 @@ public class Example {
         Song song = new Song();
         song.setTitle("Blank Space");
         song.setSingerName("TaylorSwift");
-        boolean vehicleStarted = false;
+        boolean vehicleStarted = true;
 
         String moveVehicleStatus = vehicleServices.moveVehicle(vehicleStarted);
         String playMusicStatus = vehicleServices.playMusic(vehicleStarted, song);
