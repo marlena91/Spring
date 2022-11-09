@@ -21,9 +21,20 @@ public class LoggerAspect {
 
     private Logger logger = Logger.getLogger(LoggerAspect.class.getName());
 
-    @Around("execution(* com.example.services.*.*(..))")
+    @Around("execution(* com.examplea.services.*.*(..))")
     public void log(ProceedingJoinPoint joinPoint) throws Throwable {
         logger.info(joinPoint.getSignature().toString() + " method execution start");
+        Instant start = Instant.now();
+        joinPoint.proceed();
+        Instant finish = Instant.now();
+        long timeElapsed = Duration.between(start, finish).toMillis();
+        logger.info("Time took to execute the metho: " + timeElapsed);
+        logger.info(joinPoint.getSignature().toString() + " method execution end");
+    }
+
+    @Around("@annotation(com.example.interfaces.LogAspect)")
+    public void logWithAnnotation(ProceedingJoinPoint joinPoint) throws Throwable {
+        logger.info(joinPoint.toString() + " method execution start");
         Instant start = Instant.now();
         joinPoint.proceed();
         Instant finish = Instant.now();
